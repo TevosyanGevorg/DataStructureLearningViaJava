@@ -13,7 +13,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         //Salamancas.StartListening(scanner);
         //Salamancas.StartListeningRecursive(scanner);
-        Salamancas.StartListeningByTableOfAlphabet(scanner);
+        //Salamancas.StartListeningByTableOfAlphabet(scanner);
+        Salamancas.StartListeningWithNumbers(scanner);
 
     }
 }

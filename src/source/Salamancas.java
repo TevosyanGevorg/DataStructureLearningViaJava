@@ -27,19 +27,24 @@ public class Salamancas {
 
         System.out.println("Hector's message: " + message.toString());
     }
-    public static void StartListening(Scanner isEqual,Scanner sizeOfWord) {
+    public static void StartListeningWithNumbers(Scanner scanner) {
 
-        for (int i = 0; i < alphabet.length(); i++) {
-//            if(message.length()<convert sizeOfWord) {
-//                System.out.print("Hector, is it the letter '" + alphabet.charAt(i) + "'? (*Ding* for yes, any other key for no): ");
-//                char response = scanner.next().toLowerCase().charAt(0);
-//
-//                if (response == 'r') {
-//                    message.append(alphabet.charAt(i));
-//                    i = -1;
-//                }
-//            }
+        System.out.print("The length of the word is: ");
+        int length = scanner.nextInt();
+
+        for (int i = 0; i < length * length; i++)
+        {
+            int row = i / length;
+            int col = i % length;
+
+            System.out.print(tableOfAlphabet[row][col] + " ");
+
+            if ((i + 1) % length == 0)
+            {
+                System.out.println(); // Move to the next row
+            }
         }
+
 
         System.out.println("Hector's message: " + message.toString());
     }
