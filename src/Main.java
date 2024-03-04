@@ -1,4 +1,4 @@
-import source.Salamancas;
+import HomeWorks.HomeworkAssignment_1.Salamancas;
 
 import java.util.Scanner;
 
@@ -17,7 +17,8 @@ public class Main {
         //Salamancas.StartListeningWithNumbers(scanner);
         //Salamancas.StartListeningWithNumbers(scanner);
         //Salamancas.StartListeningByTableOfAlphabet(scanner);
-        Salamancas.StartListeningWithNumbers(scanner);
-;
+        //Salamancas.StartListeningWithNumbers(scanner);
+        //Salamancas.StartListeningByTableOfAlphabet(scanner);
+
     }
 }

@@ -1,4 +1,4 @@
-package source;
+package HomeWorks.HomeworkAssignment_1;
 import java.util.Scanner;
 
 public class Salamancas {
