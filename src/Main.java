@@ -16,7 +16,8 @@ public class Main {
         //Salamancas.StartListeningByTableOfAlphabet(scanner);
         //Salamancas.StartListeningWithNumbers(scanner);
         //Salamancas.StartListeningWithNumbers(scanner);
-        Salamancas.StartListeningByTableOfAlphabet(scanner);
-
+        //Salamancas.StartListeningByTableOfAlphabet(scanner);
+        Salamancas.StartListeningWithNumbers(scanner);
+;
     }
 }
