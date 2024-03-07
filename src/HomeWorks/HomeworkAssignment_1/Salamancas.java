@@ -5,7 +5,9 @@ public class Salamancas {
     private static StringBuilder message = new StringBuilder();
 
     private static String alphabetString = "abcdefghijklmnopqrstuvwxyz";
-    private static char[] alphabetArray = {'a', 'b', 'c', 'd', 'e','f', 'g', 'h', 'i', 'j','k', 'l', 'm', 'n', 'o','p', 'q', 'r', 's', 't','u', 'v', 'w', 'x', 'y','z'};
+    //private static char[] alphabetArray = {'a', 'b', 'c', 'd', 'e','f', 'g', 'h', 'i', 'j','k', 'l', 'm', 'n', 'o','p', 'q', 'r', 's', 't','u', 'v', 'w', 'x', 'y','z'};
+    private static char[] alphabetArray = {'a', 'b', 'c'};
+
     private static char[][] alphabetTable = {{'a', 'b', 'c', 'd', 'e'}, {'f', 'g', 'h', 'i', 'j'}, {'k', 'l', 'm', 'n', 'o'}, {'p', 'q', 'r', 's', 't'}, {'u', 'v', 'w', 'x', 'y'}};
     public static void StartListening(Scanner scanner) {
         for (int i = 0; i < alphabetString.length(); i++) {
@@ -22,39 +24,39 @@ public class Salamancas {
         System.out.println("Hector's message: " + message.toString());
     }
     public static void StartListeningWithNumbers(Scanner scanner) {
-        System.out.print("The length of the word is: ");
-        int length = scanner.nextInt();
-        for (int i = 0; i < length; i++)
+        System.out.print("Print the length of the word: ");
+        int lengthOfWord = scanner.nextInt();
+        for (int i = 0; i < lengthOfWord; i++)
         {
             int pivotIndex= alphabetArray.length/2;
-            for (int j = alphabetString.length()/2; j > 0; j=j/2){
-                System.out.print("Eduardo, is the letter: "+ alphabetArray[pivotIndex]+" type (-1/0/1) for(less/equal/great)");
+            for (int j = alphabetArray.length/2; j > 0; j=j/2){
+                System.out.print("Eduardo, how about letter: "+ alphabetArray[pivotIndex]+" print (-1/0/1) for(less/equal/great)");
 
-                String response = scanner.next().toLowerCase();
-                if(j==1){
-                    message.append(alphabetArray[pivotIndex]);
-                }
-                else if(response.equals("-1")){
-                    pivotIndex=pivotIndex-j/2-1;
-                    System.out.print("Eduardo, is the letter: "+ alphabetArray[pivotIndex]+" type (-1/0/1) for(less/equal/great)");
+                String response = scanner.next();
+                if(response.equals("-1"))
+                {
+                    pivotIndex=pivotIndex==1?0:pivotIndex-j/2-1;
+                    //System.out.print("Eduardo, is the letter: "+ alphabetArray[pivotIndex]+" type (-1/0/1) for(less/equal/great)");
                     //to do check if pivot less than equal '0'
                 }
-                else if(response.equals("0")){
+                else if(response.equals("0"))
+                {
                     message.append(alphabetArray[pivotIndex]);
                 }
-                else if(response.equals("1")){
-                    pivotIndex=pivotIndex+j/2+1;
-                    System.out.print("Eduardo, is the letter: "+ alphabetArray[pivotIndex]+" type (-1/0/1) for(less/equal/great)");
+                else if(response.equals("1"))
+                {
+                    pivotIndex=pivotIndex==1?0:pivotIndex+j/2+1;
+                    //System.out.print("Eduardo, is the letter: "+ alphabetArray[pivotIndex]+" type (-1/0/1) for(less/equal/great)");
                     //to do check if pivot greater than length of alphabetArray
                 }
 
             }
-            int row = i / length;
-            int col = i % length;
-            System.out.print(alphabetTable[row][col] + " ");
+            int row = i / lengthOfWord;
+            int col = i % lengthOfWord;
         }
         System.out.println("Hector's message: " + message.toString());
     }
+    public static  void StartListeningWithNumbersRecursively(char[] alphabetArray){}
     public static void StartListeningRecursive(Scanner scanner) {
         System.out.print("Hector message is: " + Execute( scanner, message, 0));
     }

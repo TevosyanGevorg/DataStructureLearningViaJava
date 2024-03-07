@@ -14,11 +14,7 @@ public class Main {
         //Salamancas.StartListening(scanner);
         //Salamancas.StartListeningRecursive(scanner);
         //Salamancas.StartListeningByTableOfAlphabet(scanner);
-        //Salamancas.StartListeningWithNumbers(scanner);
-        //Salamancas.StartListeningWithNumbers(scanner);
-        //Salamancas.StartListeningByTableOfAlphabet(scanner);
-        //Salamancas.StartListeningWithNumbers(scanner);
-        //Salamancas.StartListeningByTableOfAlphabet(scanner);
+        Salamancas.StartListeningWithNumbers(scanner);
 
     }
 }
