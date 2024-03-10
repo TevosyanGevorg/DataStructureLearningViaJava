@@ -1,7 +1,4 @@
-import HomeWorks.HomeworkAssignment_1.Magnets;
-import HomeWorks.HomeworkAssignment_1.Salamancas;
-import LinkedList.Node;
-import source.SinglyLinkedList;
+import source.LinkedList.SinglyLinkedList.SinglyLinkedList;
 
 import java.util.Scanner;
 

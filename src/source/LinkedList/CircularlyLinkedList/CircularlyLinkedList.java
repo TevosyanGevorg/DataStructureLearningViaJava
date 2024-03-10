@@ -1,4 +1,4 @@
-package LinkedList;
+package source.LinkedList.CircularlyLinkedList;
 
 public class CircularlyLinkedList<E> {
     private Node<E> tail = null;

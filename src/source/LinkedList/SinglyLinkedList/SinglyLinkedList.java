@@ -1,17 +1,6 @@
-package source;
+package source.LinkedList.SinglyLinkedList;
 
 public class SinglyLinkedList<E> implements Cloneable {
-  private static class Node<E> {
-    private E element;
-    private Node<E> next;
-    public Node(E element, Node<E> next) {
-      this.element = element;
-      this.next = next;
-    }
-    public E getElement() { return element; }
-    public Node<E> getNext() { return next; }
-    public void setNext(Node<E> node) { next = node; }
-  }
   private Node<E> head = null;
   private Node<E> tail = null;
   private int size = 0;
@@ -101,7 +90,7 @@ public SinglyLinkedList<E> clone() {
 
   public int hashCode() {
     int h = 0;
-    for (Node walk=head; walk != null; walk = walk.getNext()) {
+    for (Node walk = head; walk != null; walk = walk.getNext()) {
       h ^= walk.getElement().hashCode();
       h = (h << 5) | (h >>> 27);
     }
