@@ -1,10 +1,10 @@
-import source.LinkedList.SinglyLinkedList.SinglyLinkedList;
+import HomeWorks.HomeworkAssignment_1.LinkedMergeSort;
+import HomeWorks.HomeworkAssignment_1.SinglyLinkedList;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {
-
         Scanner scanner = new Scanner(System.in);
 
         //Salamancas.StartListeningHectorN(scanner);
@@ -17,25 +17,13 @@ public class Main {
         //Magnets.holdingMagnetAtTheLeftSide();
         //Magnets.showMagnets();
 
-        SinglyLinkedList<Integer> singlyLinkedList=new SinglyLinkedList<Integer>();
-        singlyLinkedList.addFirst(1);
-        singlyLinkedList.addFirst(2);
-        singlyLinkedList.addFirst(3);
-        singlyLinkedList.addFirst(4);
+        //int[] integers=new int[]{ 38, 27, 43, 3, 9, 82, 10 };
+        //MergeSort.mergeSort(integers);
+        //for (int i = 0; i < integers.length; i++) {
+        //    System.out.print(integers[i]+((i == integers.length-1)?"":", "));
+        //}
 
 
-        SinglyLinkedList<Integer> singlyLinkedList2=new SinglyLinkedList<Integer>();
-        singlyLinkedList2=singlyLinkedList.clone();
-        boolean isEqual= singlyLinkedList2.equals(singlyLinkedList);
-        singlyLinkedList.first();
-        singlyLinkedList2=singlyLinkedList;
-
-        isEqual= singlyLinkedList2.equals(singlyLinkedList);
-
-        singlyLinkedList.removeFirst();
-        singlyLinkedList.removeFirst();
-        singlyLinkedList.removeFirst();
-        singlyLinkedList.removeFirst();
 
 
     }

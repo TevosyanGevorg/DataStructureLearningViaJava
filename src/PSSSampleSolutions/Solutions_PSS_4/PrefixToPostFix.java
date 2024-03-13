@@ -1,6 +1,6 @@
 package PSSSampleSolutions.Solutions_PSS_4;
-import source.ArrayStack;
-import source.Stack;
+import ArrayStack;
+import source.DataStructures.Stack.Stack;
 
 public class PrefixToPostFix {
 
