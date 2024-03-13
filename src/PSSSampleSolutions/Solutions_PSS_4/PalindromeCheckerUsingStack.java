@@ -1,5 +1,5 @@
 package PSSSampleSolutions.Solutions_PSS_4;
-import source.DataStructures.Stack.ArrayStack;;
+import source.DataStructures.Stack.ArrayStack;
 import source.DataStructures.Stack.Stack;
 
 

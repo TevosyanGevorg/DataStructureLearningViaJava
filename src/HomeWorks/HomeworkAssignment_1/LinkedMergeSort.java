@@ -2,17 +2,6 @@ package HomeWorks.HomeworkAssignment_1;
 
 
 public class LinkedMergeSort <E> {
-
-    //(a) Copy the Node class from the SinglyLinkedList into this one.
-    //(b) Implement a generic method, that given the first node of a singly-linked structure, prints its contents.
-    //(c) Implement a generic method that, given an array of generic values, creates a singly-linked structure
-//containing the values and returns the first node of the sequence.
-    //(d)Implement a generic method that, given the head node of a singly-linked structure L, splits it into two
-//singly-linked sequences Lodd and Leven and returns the head nodes of Lodd and Leven
-//in a length-2 array. All the elements at odd positions in the original list need to go into Lodd and,
-//similarly, all the elements at even positions in the original list need to go into Leven.
-//Your method may traverse the original sequence only once. You are not allowed to create any nodes or list objects.
-//While we refer to lists L, Lodd and Leven here, the method should not use any list objects; only node sequences.
     protected SinglyLinkedList <E> singlyLinkedList;
     public LinkedMergeSort(){
         this.singlyLinkedList=new SinglyLinkedList<E>();
@@ -22,6 +11,9 @@ public class LinkedMergeSort <E> {
     }
     public SinglyLinkedList.Node CreateSinglyLinkedStructure(E[] array){
         return this.singlyLinkedList.CreateSinglyLinkedStructure(array);
+    }
+    public void mergeSort(){
+        singlyLinkedList.mergeSort();
     }
     private class SinglyLinkedList<E> implements Cloneable {
         private class Node<E> {
@@ -93,6 +85,24 @@ public class LinkedMergeSort <E> {
             System.out.print(head.getElement());
         }
 
+        private void mergeSort() {
+            Node[] LoddAndLeven=SplitToEvenAndOdd(head);
+
+
+        }
+        private Node<E>[] SplitToEvenAndOdd(Node<E> head) {
+            Node<E> Leven=new Node<E>(null,null)
+                    ,Lodd=new Node<E>(null,null)
+                    ,L=head;
+            while(L!=null){
+                if ((Integer) L.getElement()%2 == 0) {
+                    Leven=new Node<>(L.getElement(),Leven);
+                }
+                else Lodd=new Node<>(L.getElement(),Lodd);
+                L=L.next;
+            }
+            return new Node[]{Lodd,Leven};
+        }
     }
 }
 

@@ -23,7 +23,9 @@ public class Main {
         //    System.out.print(integers[i]+((i == integers.length-1)?"":", "));
         //}
 
-
+        LinkedMergeSort linkedMergeSort=new LinkedMergeSort();
+        linkedMergeSort.CreateSinglyLinkedStructure(new Integer[] {5,4,3,2,1});
+        linkedMergeSort.mergeSort();
 
 
     }
