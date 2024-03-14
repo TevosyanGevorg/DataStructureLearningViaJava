@@ -23,9 +23,19 @@ public class Main {
         //    System.out.print(integers[i]+((i == integers.length-1)?"":", "));
         //}
 
-        LinkedMergeSort linkedMergeSort=new LinkedMergeSort();
-        linkedMergeSort.CreateSinglyLinkedStructure(new Integer[] {5,4,3,2,1});
-        linkedMergeSort.mergeSort();
+
+//        LinkedMergeSort.SinglyLinkedList singlyLinkedList=new LinkedMergeSort.SinglyLinkedList();
+//        LinkedMergeSort.SinglyLinkedList.Node head = singlyLinkedList.CreateSinglyLinkedStructure(new Integer[] {5,4,3,2,1});
+//        singlyLinkedList.PrintFirstNodeElement();
+//        LinkedMergeSort.SinglyLinkedList.Node[] headsOfEvenAndOdd = singlyLinkedList.SplitToEvenAndOdd(head);
+//        head=singlyLinkedList.MergeEvenAndOdd(headsOfEvenAndOdd);
+//        singlyLinkedList.PrintFirstNodeElement();
+
+        LinkedMergeSort.SinglyLinkedList singlyLinkedList=new LinkedMergeSort.SinglyLinkedList();
+        LinkedMergeSort.SinglyLinkedList.Node head = singlyLinkedList.CreateSinglyLinkedStructure(new Integer[] {5,6,8,9,1,2,7,3,4});
+        singlyLinkedList.PrintFirstNodeElement();
+        singlyLinkedList=singlyLinkedList.MergeSort(singlyLinkedList);
+        singlyLinkedList.PrintFirstNodeElement();
 
 
     }

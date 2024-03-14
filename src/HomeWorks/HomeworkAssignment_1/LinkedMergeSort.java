@@ -6,17 +6,9 @@ public class LinkedMergeSort <E> {
     public LinkedMergeSort(){
         this.singlyLinkedList=new SinglyLinkedList<E>();
     }
-    public void printFirstNodeElement(){
-        this.singlyLinkedList.printFirstNodeElement();
-    }
-    public SinglyLinkedList.Node CreateSinglyLinkedStructure(E[] array){
-        return this.singlyLinkedList.CreateSinglyLinkedStructure(array);
-    }
-    public void mergeSort(){
-        singlyLinkedList.mergeSort();
-    }
-    private class SinglyLinkedList<E> implements Cloneable {
-        private class Node<E> {
+
+    public static class SinglyLinkedList<E> implements Cloneable {
+        public class Node<E> {
             private E element;
             private Node<E> next;
             private Node(E element, Node<E> next) {
@@ -33,30 +25,30 @@ public class LinkedMergeSort <E> {
                 next = node;
             }
         }
-        private Node<E> head = null;
-        private Node<E> tail = null;
-        private int size = 0;
-        private int size() {
+        public Node<E> head = null;
+        public Node<E> tail = null;
+        public int size = 0;
+        public int size() {
             return size;
         }
-        private boolean isEmpty() {
+        public boolean isEmpty() {
             return size == 0;
         }
-        private E first() {
+        public E first() {
             if (isEmpty()) return null;
             return head.getElement();
         }
-        private E last() {
+        public E last() {
             if (isEmpty()) return null;
             return tail.getElement();
         }
-        private void addFirst(E element) {
+        public void addFirst(E element) {
             head = new Node<>(element, head);
             if (size == 0)
                 tail = head;
             size++;
         }
-        private void addLast(E element) {
+        public void addLast(E element) {
             Node<E> newest = new Node<>(element, null);
             if (isEmpty())
                 head = newest;
@@ -65,7 +57,7 @@ public class LinkedMergeSort <E> {
             tail = newest;
             size++;
         }
-        private E removeFirst() {
+        public E removeFirst() {
             if (isEmpty()) return null;
             E answer = head.getElement();
             head = head.getNext();
@@ -74,34 +66,142 @@ public class LinkedMergeSort <E> {
                 tail = null;
             return answer;
         }
-        private SinglyLinkedList(){}
-        private Node<E>CreateSinglyLinkedStructure(E[]array){
+        public SinglyLinkedList(){}
+
+
+        public Node<E>CreateSinglyLinkedStructure(E[]array){
             for (int i = 0; i < array.length; i++) {
-                addFirst(array[i]);
+                addLast(array[i]);
             }
             return head;
         }
-        private void printFirstNodeElement(){
-            System.out.print(head.getElement());
-        }
-
-        private void mergeSort() {
-            Node[] LoddAndLeven=SplitToEvenAndOdd(head);
-
-
-        }
-        private Node<E>[] SplitToEvenAndOdd(Node<E> head) {
-            Node<E> Leven=new Node<E>(null,null)
-                    ,Lodd=new Node<E>(null,null)
-                    ,L=head;
-            while(L!=null){
-                if ((Integer) L.getElement()%2 == 0) {
-                    Leven=new Node<>(L.getElement(),Leven);
-                }
-                else Lodd=new Node<>(L.getElement(),Lodd);
-                L=L.next;
+        public void PrintFirstNodeElement(){
+            Node<E>current=this.head;
+            while (current!=null){
+                System.out.print(current.getElement());
+                current=current.next;
             }
-            return new Node[]{Lodd,Leven};
+            System.out.println();
+
+        }
+        public SinglyLinkedList.Node[] SplitToEvenAndOdd(SinglyLinkedList.Node head) {
+            SinglyLinkedList<E> Leven=new SinglyLinkedList<E>();
+            SinglyLinkedList<E> Lodd=new SinglyLinkedList<E>();
+            Node <E> L=head;
+            int possition=1;
+            while(L!=null){
+                if (possition%2 == 0) {
+                    Leven.addFirst(L.getElement());
+                }
+                else Lodd.addFirst(L.getElement());
+                L=L.next;
+                possition++;
+            }
+            return new Node[]{Lodd.head,Leven.head};
+        }
+        public Node MergeEvenAndOdd(Node<E>[] heads) {
+            SinglyLinkedList<E> merged=new SinglyLinkedList<E>();
+
+            int possition=1;
+            while(!(heads[0]==null&&heads[1]==null)){
+                if (possition%2 == 0) {
+                    merged.addLast(heads[1].getElement());
+                    heads[1]=heads[1].getNext();
+                }
+                else {
+                    merged.addLast(heads[0].getElement());
+                    heads[0]=heads[0].getNext();
+                }
+                possition++;
+            }
+            return merged.head;
+        }
+
+
+        //(f) Implement a generic method that,
+        // given the head node of a singly-linked structure of integer elements
+        // applies merge sort on it and returns the head node of the resulting sequence.
+        //(g) Add a main method, and test all the methods above.
+        public SinglyLinkedList<E> Merge(SinglyLinkedList<E>[] lists) {
+            SinglyLinkedList<E> merged=new SinglyLinkedList<E>();
+            int positionLeft=lists[0].size;
+            int positionRight=lists[1].size;
+            Node<E> Left=lists[0].head;
+            Node<E> Right=lists[1].head;
+
+
+            while(Left!=null&&Right!=null){
+                if (Left.getElement()!=null&&Right.getElement()!=null) {
+                    if ((Integer) Left.getElement() < (Integer) Right.getElement()) {
+                        merged.addLast(Left.getElement());
+                        Left = Left.getNext();
+                    } else {
+                        merged.addLast(Right.getElement());
+                        Right = Right.getNext();
+                    }
+                }
+            }
+
+            while(Left!=null){
+                merged.addLast(Left.getElement());
+                Left = Left.getNext();
+            }
+            while(Right!=null){
+                merged.addLast(Right.getElement());
+                Right = Right.getNext();
+            }
+
+            return merged;
+        }
+
+        public SinglyLinkedList[] Split(Node<E> head){
+            SinglyLinkedList<E> Leven=new SinglyLinkedList<E>();
+            SinglyLinkedList<E> Lodd=new SinglyLinkedList<E>();
+            Node <E> L=head;
+            int possition=1;
+            while(L!=null){
+                if (possition%2 == 0) {
+                    Leven.addFirst(L.getElement());
+                }
+                else Lodd.addFirst(L.getElement());
+                L=L.next;
+                possition++;
+            }
+            return new SinglyLinkedList[]{Lodd,Leven};
+        }
+        public SinglyLinkedList<E>  MergeSort (SinglyLinkedList<E> singlyLinkedList){
+            //singlyLinkedList.PrintFirstNodeElement();
+            if (singlyLinkedList.head.next == null) {
+                return singlyLinkedList;
+            }
+            SinglyLinkedList<E>[] lists=Split(singlyLinkedList.head);
+            lists[0]=MergeSort(lists[0]);
+            lists[1]=MergeSort(lists[1]);
+            //singlyLinkedList.PrintFirstNodeElement();
+
+            singlyLinkedList=Merge(lists);
+
+
+            return singlyLinkedList;
+
+
+
+
+
+//            if (!(headsOfEvenAndOdd [0]== null&&headsOfEvenAndOdd [1]== null)) {
+//                head=MergeRecursively(headsOfEvenAndOdd);
+//            }
+//            else if (headsOfEvenAndOdd[0].next== null&&headsOfEvenAndOdd[1].next==null) {
+//                head=MergeRecursively(headsOfEvenAndOdd);
+//            }
+//            else{
+//                Merge(headsOfEvenAndOdd[0]);
+//                Merge(headsOfEvenAndOdd[1]);
+//            }
+
+            //headsOfEvenAndOdd=singlyLinkedList.SplitRecursively(headsOfEvenAndOdd[0]);
+            //headsOfEvenAndOdd=singlyLinkedList.SplitRecursively(headsOfEvenAndOdd[1]);
+            //singlyLinkedList.PrintFirstNodeElement();
         }
     }
 }
