@@ -32,7 +32,7 @@ public class Main {
 //        singlyLinkedList.PrintFirstNodeElement();
 
         LinkedMergeSort.SinglyLinkedList singlyLinkedList=new LinkedMergeSort.SinglyLinkedList();
-        LinkedMergeSort.SinglyLinkedList.Node head = singlyLinkedList.CreateSinglyLinkedStructure(new Integer[] {5,6,8,9,1,2,7,3,4});
+        singlyLinkedList.CreateSinglyLinkedStructure(new Integer[] {5,12,6,10,8,9,1,2,13,7,3,4,11});
         singlyLinkedList.PrintFirstNodeElement();
         singlyLinkedList=singlyLinkedList.MergeSort(singlyLinkedList);
         singlyLinkedList.PrintFirstNodeElement();

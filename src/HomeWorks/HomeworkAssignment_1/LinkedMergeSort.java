@@ -2,11 +2,6 @@ package HomeWorks.HomeworkAssignment_1;
 
 
 public class LinkedMergeSort <E> {
-    protected SinglyLinkedList <E> singlyLinkedList;
-    public LinkedMergeSort(){
-        this.singlyLinkedList=new SinglyLinkedList<E>();
-    }
-
     public static class SinglyLinkedList<E> implements Cloneable {
         public class Node<E> {
             private E element;
@@ -68,7 +63,6 @@ public class LinkedMergeSort <E> {
         }
         public SinglyLinkedList(){}
 
-
         public Node<E>CreateSinglyLinkedStructure(E[]array){
             for (int i = 0; i < array.length; i++) {
                 addLast(array[i]);
@@ -78,7 +72,9 @@ public class LinkedMergeSort <E> {
         public void PrintFirstNodeElement(){
             Node<E>current=this.head;
             while (current!=null){
+                System.out.print("[");
                 System.out.print(current.getElement());
+                System.out.print("]");
                 current=current.next;
             }
             System.out.println();
@@ -116,20 +112,10 @@ public class LinkedMergeSort <E> {
             }
             return merged.head;
         }
-
-
-        //(f) Implement a generic method that,
-        // given the head node of a singly-linked structure of integer elements
-        // applies merge sort on it and returns the head node of the resulting sequence.
-        //(g) Add a main method, and test all the methods above.
         public SinglyLinkedList<E> Merge(SinglyLinkedList<E>[] lists) {
             SinglyLinkedList<E> merged=new SinglyLinkedList<E>();
-            int positionLeft=lists[0].size;
-            int positionRight=lists[1].size;
             Node<E> Left=lists[0].head;
             Node<E> Right=lists[1].head;
-
-
             while(Left!=null&&Right!=null){
                 if (Left.getElement()!=null&&Right.getElement()!=null) {
                     if ((Integer) Left.getElement() < (Integer) Right.getElement()) {
@@ -153,7 +139,6 @@ public class LinkedMergeSort <E> {
 
             return merged;
         }
-
         public SinglyLinkedList[] Split(Node<E> head){
             SinglyLinkedList<E> Leven=new SinglyLinkedList<E>();
             SinglyLinkedList<E> Lodd=new SinglyLinkedList<E>();
@@ -170,38 +155,14 @@ public class LinkedMergeSort <E> {
             return new SinglyLinkedList[]{Lodd,Leven};
         }
         public SinglyLinkedList<E>  MergeSort (SinglyLinkedList<E> singlyLinkedList){
-            //singlyLinkedList.PrintFirstNodeElement();
             if (singlyLinkedList.head.next == null) {
                 return singlyLinkedList;
             }
             SinglyLinkedList<E>[] lists=Split(singlyLinkedList.head);
             lists[0]=MergeSort(lists[0]);
             lists[1]=MergeSort(lists[1]);
-            //singlyLinkedList.PrintFirstNodeElement();
-
             singlyLinkedList=Merge(lists);
-
-
             return singlyLinkedList;
-
-
-
-
-
-//            if (!(headsOfEvenAndOdd [0]== null&&headsOfEvenAndOdd [1]== null)) {
-//                head=MergeRecursively(headsOfEvenAndOdd);
-//            }
-//            else if (headsOfEvenAndOdd[0].next== null&&headsOfEvenAndOdd[1].next==null) {
-//                head=MergeRecursively(headsOfEvenAndOdd);
-//            }
-//            else{
-//                Merge(headsOfEvenAndOdd[0]);
-//                Merge(headsOfEvenAndOdd[1]);
-//            }
-
-            //headsOfEvenAndOdd=singlyLinkedList.SplitRecursively(headsOfEvenAndOdd[0]);
-            //headsOfEvenAndOdd=singlyLinkedList.SplitRecursively(headsOfEvenAndOdd[1]);
-            //singlyLinkedList.PrintFirstNodeElement();
         }
     }
 }
