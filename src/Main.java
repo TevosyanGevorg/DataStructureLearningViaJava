@@ -1,4 +1,6 @@
 import HomeWorks.HomeworkAssignment_1.LinkedMergeSort;
+import HomeWorks.HomeworkAssignment_1.SelectionSort;
+import source.DataStructures.LinkedList.DoublyLinkedList.DoublyLinkedList;
 
 
 import java.util.Scanner;
@@ -31,12 +33,18 @@ public class Main {
 //        head=singlyLinkedList.MergeEvenAndOdd(headsOfEvenAndOdd);
 //        singlyLinkedList.PrintFirstNodeElement();
 
-        LinkedMergeSort.SinglyLinkedList singlyLinkedList=new LinkedMergeSort.SinglyLinkedList();
-        singlyLinkedList.CreateSinglyLinkedStructure(new Integer[] {5,12,6,10,8,9,1,2,13,7,3,4,11});
-        singlyLinkedList.PrintFirstNodeElement();
-        singlyLinkedList=singlyLinkedList.MergeSort(singlyLinkedList);
-        singlyLinkedList.PrintFirstNodeElement();
+//        LinkedMergeSort.SinglyLinkedList singlyLinkedList=new LinkedMergeSort.SinglyLinkedList();
+//        singlyLinkedList.CreateSinglyLinkedStructure(new Integer[] {5,12,6,10,8,9,1,2,13,7,3,4,11});
+//        singlyLinkedList.PrintFirstNodeElement();
+//        singlyLinkedList=singlyLinkedList.MergeSort(singlyLinkedList);
+//        singlyLinkedList.PrintFirstNodeElement();
 
+        DoublyLinkedList doublyLinkedList=new DoublyLinkedList();
+        //doublyLinkedList.CreateLinkedStructure(new Integer[] {5,12,6,10,8,9,1,2,13,7,3,4,11});
+        doublyLinkedList.CreateLinkedStructure(new Integer[] {5,12,6,10,8,9,1,2,13,7,3,4,11});
+        doublyLinkedList.PrintFirstNodeElement();
+        SelectionSort.Sort(doublyLinkedList);
+        doublyLinkedList.PrintFirstNodeElement();
 
     }
 }
