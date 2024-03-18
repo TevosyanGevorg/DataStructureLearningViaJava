@@ -1,9 +1,9 @@
 package source.DataStructures.LinkedList.DoublyLinkedList;
 
 public class Node<E> {
-    public E element;
-    public Node<E> prev;
-    public Node<E> next;
+    private E element;
+    private Node<E> prev;
+    private Node<E> next;
 
     public Node(E e, Node<E> p, Node<E> n) {
         element = e;
