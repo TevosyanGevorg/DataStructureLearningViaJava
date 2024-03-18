@@ -1,3 +1,4 @@
+import source.DataStructures.LinkedList.SinglyLinkedList.SinglyLinkedList;
 import source.HomeWorks.HomeworkAssignment_1.*;
 
 
@@ -26,6 +27,18 @@ public class Main {
 //        }
 
 
+        SinglyLinkedList<Integer> singlyLinkedList=new SinglyLinkedList<Integer>();
+//        singlyLinkedList.addLast(1);
+//        singlyLinkedList.addLast(2);
+//        singlyLinkedList.addLast(3);
+//        singlyLinkedList.addLast(4);
+//        singlyLinkedList.addLast(5);
+//        singlyLinkedList.addLast(6);
+//        singlyLinkedList.addLast(7);
+//        SinglyLinkedList<Integer> singlyLinkedList1=singlyLinkedList.clone();
+//        singlyLinkedList.removeFirst();
+//        singlyLinkedList.removeFirst();
+//        scanner = new Scanner(System.in);
 //        LinkedMergeSort.SinglyLinkedList singlyLinkedList=new LinkedMergeSort.SinglyLinkedList();
 //        LinkedMergeSort.SinglyLinkedList.Node head = singlyLinkedList.CreateSinglyLinkedStructure(new Integer[] {5,4,3,2,1});
 //        singlyLinkedList.PrintFirstNodeElement();

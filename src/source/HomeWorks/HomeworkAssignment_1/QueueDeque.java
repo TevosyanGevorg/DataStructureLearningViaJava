@@ -5,4 +5,5 @@ package source.HomeWorks.HomeworkAssignment_1;
 // You are NOT allowed to use java.util.Queue functionality.
 
 public class QueueDeque {
+
 }
