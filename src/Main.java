@@ -1,5 +1,4 @@
-import HomeWorks.HomeworkAssignment_1.LinkedMergeSort;
-import HomeWorks.HomeworkAssignment_1.SelectionSort;
+import source.HomeWorks.HomeworkAssignment_1.SelectionSort;
 import source.DataStructures.LinkedList.DoublyLinkedList.DoublyLinkedList;
 
 

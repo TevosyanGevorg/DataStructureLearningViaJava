@@ -1,7 +1,5 @@
 package source.DataStructures.LinkedList.DoublyLinkedList;
 
-import HomeWorks.HomeworkAssignment_1.LinkedMergeSort;
-
 public class DoublyLinkedList<E> {
     public Node<E> header;
     public Node<E> trailer;
